@@ -30,7 +30,6 @@
     def parser_lesson_content(content):
         lines = content.splitlines(True)
         content = {}
-
         content['name'] = '计算机网络技术'
         ````````
       
