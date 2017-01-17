@@ -12,9 +12,10 @@
 3.随便选择Name中的一个请求，在Headers中找到Request Headers中的Cookie，添加到代码的cookie选项中，如下所示：
 
     headers = {
-        'Cookie':'',#添加到这儿
-        'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
-    }
+
+        'Cookie':'',#添加到这儿
+        'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+        }
 
 4.点进想要下载的课程的学习页面，如课件页面，复制所在页面的地址，修改地址，如下所示：
     
@@ -36,8 +37,8 @@
 8.至此，修改完成，执行python dl_icourse163.py,等待下载完成吧。
 
 
-#由于对http协议的理解及应用上仍有不足，以及爬虫时icourse163有些信息是js代码生成的，对这方面的处理经验不足，所以需要手动操作的环节较多。
+由于对http协议的理解及应用上仍有不足，以及爬虫时icourse163有些信息是js代码生成的，对这方面的处理经验不足，所以需要手动操作的环节较多。
 
-#下一步优化目标即为解决js代码生成部分的网页内容的抓取，以及对cookie的处理。
+下一步优化目标即为解决js代码生成部分的网页内容的抓取，以及对cookie的处理。
 
-#如果您有好的建议，欢迎指点，谢谢～
+如果您有好的建议，欢迎指点，谢谢～
