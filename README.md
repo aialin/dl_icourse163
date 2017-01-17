@@ -30,7 +30,7 @@
     def parser_lesson_content(content):
         lines = content.splitlines(True)
         content = {}
-        content['name'] = '计算机网络技术'
+        content['name'] = '计算机网络技术'
         ````````
       
 8.至此，修改完成，执行python dl_icourse163.py,等待下载完成吧。
@@ -38,6 +38,8 @@
 
 由于对http协议的理解及应用上仍有不足，以及爬虫时icourse163有些信息是js代码生成的，对这方面的处理经验不足，所以需要手动操作的环节较多。
 
+
 下一步优化目标即为解决js代码生成部分的网页内容的抓取，以及对cookie的处理。
+
 
 如果您有好的建议，欢迎指点，谢谢～
