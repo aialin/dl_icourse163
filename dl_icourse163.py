@@ -60,7 +60,7 @@ def parser_lesson_content(content):
 	if is_chapter:
             name = is_chapter.group(1)
             chapter = {}
-            chapter['name'] = name
+            chapter['name'] = name.replace('/','_') if name.find('/') is not -1 else name
             chapter_index += 1
             chapter['lessons'] = []
             content['chapters'].append(chapter)
@@ -68,7 +68,8 @@ def parser_lesson_content(content):
            is_video = re.search(vid_reg, line)
            if is_video:
                lesson = {}
-               lesson['name'] = is_video.group(2)
+               name = is_video.group(2)
+               lesson['name'] = name.replace('/','_') if name.find('/') is not -1 else name
                lesson['id'] = is_video.group(1)
                content['chapters'][chapter_index]['lessons'].append(lesson)            
 
@@ -122,10 +123,10 @@ def get_video(link, filename):
  
     
 def download_video(path, lesson):
-    if not os.path.isfile(file_path):
+    if not os.path.isfile(path):
        link = get_video_link(lesson['id'])
-       get_video(link, file_path) 
-       print file_path
+       get_video(link, path) 
+       print path
     
 
 lesson_content = get_lesson_content_info(headers,content_data,content_url)
