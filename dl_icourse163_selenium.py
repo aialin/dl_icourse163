@@ -16,7 +16,7 @@ class Icourse:
         url = 'http://www.icourse163.org/'
         self._driver= webdriver.Chrome()
         self._driver.get(url)
-        self._driver.find_element_by_id('navLoginBtn').click()
+        self._driver.find_element_by_css_selector('a[class="f-f0 navLoginBtn"]').click()
         self._driver.switch_to_frame(self._driver.find_element_by_tag_name('iframe').get_attribute('id'))
 
         while True:
