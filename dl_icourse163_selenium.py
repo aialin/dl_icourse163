@@ -16,7 +16,7 @@ class Icourse:
         url = 'http://www.icourse163.org/'
         self._driver= webdriver.Chrome()
         self._driver.get(url)
-        self._driver.find_element_by_css_selector('a[class="f-f0 navLoginBtn"]').click()
+        self._driver.find_elements_by_class_name('navLoginBtn')[2].click()
         self._driver.switch_to_frame(self._driver.find_element_by_tag_name('iframe').get_attribute('id'))
 
         while True:
@@ -57,7 +57,7 @@ class Icourse:
             'c0-scriptName': 'CourseBean',
             'c0-methodName': 'getLastLearnedMocTermDto',
             'c0-id': 0,
-            'c0-param0': 'number:1001855008',
+            'c0-param0': 'number:%s'%self._content_id,
             'batchId': '1484662263376'
         }       
         pattern = re.compile('NTESSTUDYSI=(.*?);')
@@ -163,7 +163,8 @@ class Icourse:
 
 
     def get_lesson_name(self):
-        content_url = 'http://www.icourse163.org/learn/JLU-1001540001?tid=1001855008#/learn/content'
+        content_url = \
+        'http://www.icourse163.org/learn/BIT-1001870001?tid=1001962001#/learn/content'
         self._driver.get(content_url)
         self._lesson_name = self._driver.find_element_by_class_name('courseTxt').text
         pattern = re.compile(r'.*?tid=(.*?)#')
